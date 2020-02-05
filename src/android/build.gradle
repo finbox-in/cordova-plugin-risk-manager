@@ -1,0 +1,28 @@
+def DEFAULT_COMPILE_SDK_VERSION = 29
+def DEFAULT_MIN_SDK_VERSION = 16
+def DEFAULT_TARGET_SDK_VERSION = 29
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def awsKey = properties.getProperty('AWS_KEY')
+def awsSecret = properties.getProperty('AWS_SECRET')
+def riskVersion = properties.getProperty('FINBOX_RM_VERSION')
+def riskArtifact = properties.getProperty('FINBOX_RM_ARTIFACT')
+
+repositories {
+    maven {
+        url "s3://risk-manager-android-sdk/artifacts"
+        credentials(AwsCredentials) {
+            accessKey = awsKey 
+            secretKey = awsSecret
+        }
+    }
+    google()
+    jcenter()
+}
+
+dependencies {
+    implementation("in.finbox:mobileriskmanager:${riskVersion}:${riskArtifact}@aar") {
+        transitive = true
+    }
+}

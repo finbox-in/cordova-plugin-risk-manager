@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-finbox-risk-manager" version="0.1.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>FinBoxRiskManager</name>
+    <js-module name="FinBoxRiskManager" src="www/FinBoxRiskManager.js">
+        <clobbers target="cordova.plugins.FinBoxRiskManager" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="FinBoxRiskManager">
+                <param name="android-package" value="in.finbox.risk.FinBoxRiskManager" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
+        <source-file src="src/android/FinBoxRiskManager.java" target-dir="src/in/finbox/risk/" />
+    </platform>
+</plugin>

@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-finbox-risk-manager",
+  "version": "0.1.2",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-finbox-risk-manager",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC"
+}
