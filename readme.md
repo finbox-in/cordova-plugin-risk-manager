@@ -9,3 +9,7 @@ Following will be shared by FinBox team at the time of integration and are requi
 - `DC_SDK_VERSION`
 - `CLIENT_API_KEY`
 :::
+
+In order to install the plugin use the following
+
+`cordova plugin add cordova-plugin-finbox-risk-manager --variable AWS_KEY=<ACCESS_KEY> --variable AWS_SECRET=<SECRET_KEY> --variable FINBOX_RM_VERSION=<DC_SDK_VERSION> --variable FINBOX_RM_ARTIFACT=<CLIENT_API_KEY>`
