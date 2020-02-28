@@ -9,5 +9,3 @@ Following will be shared by FinBox team at the time of integration and are requi
 - `DC_SDK_VERSION`
 - `CLIENT_API_KEY`
 :::
-
-`<ACCESS_KEY>`, `<API_KEY>`, `<SECRET_KEY>` will be shared by FinBox and are required to successfully run this sample app.
