@@ -6,7 +6,13 @@
     <js-module name="FinBoxRiskManager" src="www/FinBoxRiskManager.js">
         <clobbers target="cordova.plugins.FinBoxRiskManager" />
     </js-module>
+    <preference name="AWS_KEY" />
+    <preference name="AWS_SECRET" />
+    <preference name="FINBOX_RM_VERSION" />
+    <preference name="FINBOX_RM_ARTIFACT" default=" "/>
     <platform name="android">
+        <hook type="before_prepare" src="scripts/androidCreatePropertiesFile.js" />
+
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FinBoxRiskManager">
                 <param name="android-package" value="in.finbox.risk.FinBoxRiskManager" />
@@ -16,5 +22,10 @@
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
         <source-file src="src/android/FinBoxRiskManager.java" target-dir="src/in/finbox/risk/" />
+        <meta-data android:name="AWS_KEY" android:value="$AWS_KEY" />
+        <meta-data android:name="AWS_SECRET" android:value="$AWS_SECRET" />
+        <meta-data android:name="FINBOX_RM_VERSION" android:value="$FINBOX_RM_VERSION" />
+        <meta-data android:name="FINBOX_RM_ARTIFACT" android:value="$FINBOX_RM_ARTIFACT" />
+
     </platform>
 </plugin>
