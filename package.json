@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-finbox-risk-manager",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "",
   "cordova": {
     "id": "cordova-plugin-finbox-risk-manager",
