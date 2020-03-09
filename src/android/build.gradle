@@ -3,7 +3,7 @@ def DEFAULT_MIN_SDK_VERSION = 16
 def DEFAULT_TARGET_SDK_VERSION = 29
 
 Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+properties.load(project.rootProject.file('finbox.properties').newDataInputStream())
 def awsKey = properties.getProperty('AWS_KEY')
 def awsSecret = properties.getProperty('AWS_SECRET')
 def riskVersion = properties.getProperty('FINBOX_RM_VERSION')

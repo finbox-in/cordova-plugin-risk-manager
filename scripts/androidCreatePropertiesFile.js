@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 
 const PLUGIN_NAME = "cordova-plugin-finbox-risk-manager";
-const GRADLE_FILENAME = path.resolve(process.cwd(), 'platforms', 'android', 'local.properties');
+const GRADLE_FILENAME = path.resolve(process.cwd(), 'platforms', 'android', 'finbox.properties');
 
 fs.readFile(path.resolve(process.cwd(), 'package.json'), function (err, data) {
     var jsonData = JSON.parse(data)
@@ -23,12 +23,12 @@ FINBOX_RM_ARTIFACT=${finboxRmArtifact}`
 });
 
 /**
-* Write local.properties with:
+* Write finbox.properties with:
 *
 *
 */
 function setGradleTemplate(template) {
-    fs.appendFile(GRADLE_FILENAME, template, 'utf8', function (err) {
+    fs.writeFile(GRADLE_FILENAME, template, 'utf8', function (err) {
         if (err) return console.log(PLUGIN_NAME, " FAILED TO WRITE ", GRADLE_FILENAME, " > ", template, err);
     });
 }
