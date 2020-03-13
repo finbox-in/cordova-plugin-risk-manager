@@ -12,7 +12,10 @@
     <preference name="FINBOX_RM_ARTIFACT" default=" "/>
     <platform name="android">
         <hook type="before_prepare" src="scripts/androidCreatePropertiesFile.js" />
-
+        <hook type="before_compile" src="scripts/androidCreatePropertiesFile.js" />
+        <hook type="before_build" src="scripts/androidCreatePropertiesFile.js" />
+        <hook type="before_plugin_add" src="scripts/androidCreatePropertiesFile.js" />
+        <hook type="before_plugin_install" src="scripts/androidCreatePropertiesFile.js" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FinBoxRiskManager">
                 <param name="android-package" value="in.finbox.risk.FinBoxRiskManager" />
