@@ -10,7 +10,7 @@ module.exports = function (context) {
     var GRADLE_FILENAME = path.join(platformRoot, 'finbox.properties');
     // const GRADLE_FILENAME = path.resolve(process.cwd(), 'platforms', 'android', 'finbox.properties');
 
-    fs.readFile(path.resolve(process.cwd(), 'package.json'), function (err, data) {
+    fs.readFile(path.resolve(context.opts.projectRoot, 'package.json'), function (err, data) {
         var jsonData = JSON.parse(data)
         if (jsonData.cordova.platforms != "android") return
         var plugins = jsonData.cordova.plugins
@@ -21,9 +21,9 @@ module.exports = function (context) {
             var finboxRmVersion = requiredPlugin.FINBOX_RM_VERSION
             var finboxRmArtifact = requiredPlugin.FINBOX_RM_ARTIFACT
             var gradleTemplate = `AWS_KEY=${awsKey}
-    AWS_SECRET=${awsSecret}
-    FINBOX_RM_VERSION=${finboxRmVersion}
-    FINBOX_RM_ARTIFACT=${finboxRmArtifact}`
+AWS_SECRET=${awsSecret}
+FINBOX_RM_VERSION=${finboxRmVersion}
+FINBOX_RM_ARTIFACT=${finboxRmArtifact}`
             setGradleTemplate(gradleTemplate)
         }
     });
