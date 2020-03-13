@@ -2,8 +2,8 @@
 
 module.exports = function (context) {
 
-    var fs = require('fs'),
-        path = require('path');
+    var fs = context.requireCordovaModule('fs'),
+        path = context.requireCordovaModule('path');
 
     const PLUGIN_NAME = "cordova-plugin-finbox-risk-manager";
     var platformRoot = path.join(context.opts.projectRoot, 'platforms/android');
