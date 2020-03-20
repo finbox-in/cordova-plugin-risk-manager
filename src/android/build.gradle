@@ -24,6 +24,5 @@ repositories {
 dependencies {
     implementation("in.finbox:mobileriskmanager:${riskVersion}:${riskArtifact}@aar") {
         transitive = true
-        exclude group: 'com.android.support', module: 'support-v4'
     }
 }
