@@ -14,5 +14,8 @@
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "path": "^0.12.7"
+  }
 }
